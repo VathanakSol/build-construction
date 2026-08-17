@@ -1,0 +1,328 @@
+/* ---------- Home hero ---------- */
+.hero {
+  min-height: 82vh;
+  display: grid;
+  align-items: center;
+  background:
+    linear-gradient(rgba(22, 41, 95, 0.72), rgba(15, 23, 42, 0.78)),
+    url("https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+  color: #fff;
+  padding: 3rem 0;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.42rem 1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(4px);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1.3rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 1.4rem + 3.2vw, 3.8rem);
+  font-weight: 800;
+  margin: 0 0 1rem;
+  line-height: 1.08;
+  color: #fff;
+  max-width: 680px;
+}
+
+.hero h1 .accent {
+  color: var(--secondary);
+}
+
+.hero p {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 620px;
+  margin: 0 0 1.8rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+.hero-stats {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.6rem;
+  padding: 0;
+  margin: 2.8rem 0 0;
+}
+
+.hero-stats li {
+  display: grid;
+  gap: 0.1rem;
+  border-left: 3px solid rgba(255, 255, 255, 0.25);
+  padding-left: 1rem;
+}
+
+.hero-stats strong {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.hero-stats span {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ---------- Gallery ---------- */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.1rem;
+}
+
+.gallery-item {
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+  margin: 0;
+  box-shadow: var(--shadow);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 55%, rgba(15, 23, 42, 0.72));
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.07);
+}
+
+.gallery-item:hover::after {
+  opacity: 1;
+}
+
+.caption {
+  position: absolute;
+  inset: auto 0 0 0;
+  z-index: 1;
+  color: #fff;
+  padding: 1.1rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transform: translateY(4px);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .caption {
+  transform: translateY(0);
+}
+
+.gallery-more {
+  margin-top: 1.8rem;
+  text-align: center;
+}
+
+/* ---------- Page hero (inner pages) ---------- */
+.page-hero {
+  background:
+    radial-gradient(60% 130% at 85% 10%, rgba(249, 115, 22, 0.3), transparent 60%),
+    linear-gradient(130deg, var(--primary-dark), var(--primary) 55%, #1e40af);
+  color: #fff;
+  padding: 4.6rem 0;
+}
+
+.page-hero h1 {
+  margin: 0 0 0.6rem;
+  font-size: clamp(2rem, 1.4rem + 2vw, 3rem);
+  font-weight: 800;
+  color: #fff;
+}
+
+.page-hero p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.08rem;
+  max-width: 640px;
+}
+
+/* ---------- Project filters ---------- */
+.filters {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.6rem;
+}
+
+.filter-btn {
+  background: var(--surface);
+  color: var(--text-body);
+  border: 1.5px solid #d7dce3;
+  border-radius: 999px;
+  padding: 0.5rem 1.15rem;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.filter-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-1px);
+}
+
+.filter-btn.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(30, 58, 138, 0.28);
+}
+
+.project-card img {
+  height: 215px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  margin-bottom: 0.9rem;
+}
+
+.project-card h3 {
+  margin-bottom: 0.4rem;
+}
+
+.project-card p {
+  font-size: 0.9rem;
+  margin: 0.2rem 0;
+}
+
+/* ---------- Services page ---------- */
+.services-intro {
+  max-width: 720px;
+}
+
+.services-stack {
+  display: grid;
+  gap: 1.4rem;
+}
+
+.service-card {
+  padding: 1.2rem;
+}
+
+.service-card .service-content {
+  padding: 0.5rem;
+}
+
+.service-card h2 {
+  margin: 0.6rem 0 0.7rem;
+  font-size: 1.5rem;
+}
+
+.service-card p {
+  margin-top: 0;
+  color: var(--text-body);
+}
+
+.service-pill {
+  display: inline-block;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(249, 115, 22, 0.12);
+  color: var(--secondary-dark);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.service-features {
+  list-style: none;
+  padding: 0;
+  margin: 0.95rem 0 0;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.service-features li {
+  position: relative;
+  padding-left: 1.4rem;
+  color: var(--text-body);
+}
+
+.service-features li::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--secondary);
+  position: absolute;
+  left: 0.2rem;
+  top: 0.55rem;
+}
+
+.service-image {
+  width: 100%;
+  height: 100%;
+  min-height: 250px;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  transition: transform 0.4s ease;
+}
+
+.service-card:hover .service-image {
+  transform: scale(1.03);
+}
+
+.service-card:nth-child(even) .service-content {
+  order: 2;
+}
+
+.service-card:nth-child(even) .service-image {
+  order: 1;
+}
+
+.services-cta {
+  display: grid;
+  gap: 1rem;
+  text-align: center;
+  justify-items: center;
+  padding: 2.4rem 1.6rem;
+  background: linear-gradient(120deg, rgba(30, 58, 138, 0.07), rgba(249, 115, 22, 0.12));
+}
+
+.services-cta h2 {
+  margin: 0;
+}
+
+.services-cta p {
+  margin: 0;
+  max-width: 760px;
+  color: var(--text-body);
+}
+
+/* ---------- About page ---------- */
+.about-image {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+}
